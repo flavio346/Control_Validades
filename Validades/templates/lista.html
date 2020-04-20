@@ -1,27 +1,62 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{% url 'melogout'%}">Sair</a>
-    <ul>
-    {% for item in registro %}
-        <li>
-            <a href="{% url 'atualizar'  item.id %}">{{ item.Produto}}</a>
-            <a href="{% url 'apagar'  item.id %}">Deletar</a>
-        </li>
 
 
-    {% endfor %}
-    </ul>
 
-    <br>
-    <a href="{% url 'novo' %}">Adicionar Registro</a>
 
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Controle de Validades {% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+                <h3>Lista de Registro</h3>
+                 <ul class="list-group">
+                    {% for item in registro %}
+                        <li class="list-group-item">
+                            <a href="{% url 'atualizar'  item.id %}">{{ item.Produto}}</a>
+                            <a href="{% url 'apagar'  item.id %}"class="btn btn-outline-danger" >Excluir</a>
+                        </li>
+
+
+                    {% endfor %}
+                 </ul>
+
+                    <br>
+                    <a href="{% url 'novo' %}" class="btn btn-primary">Adicionar Registro</a>
+
+
+        </div>
+        <div class="col">
+            <a href="{% url 'melogout'%}" class="btn btn-warning">Sair</a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

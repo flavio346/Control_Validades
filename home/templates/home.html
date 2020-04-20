@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Seja Bem Vindo</h1>
+{% extends 'base.html' %}
 
-    {% if user.is_authenticated %}
-        <p>Ola {{ user.username}}</p>
-        <a href="{% url 'logout' %}">Sair</a>
-    {% else %}
-        <a href="{% url 'login' %}">Entrar</a>
-    {% endif%}
-</body>
-</html>
+{% block title %} Seja Bem Vindo {% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+            <img width="25%" src="https://www.redefemininapi.org.br/wp-content/uploads/2020/02/82035147_2504376926471124_3326539173904515072_n.png" alt="">
+           <h1>Seja Bem Vindo</h1>
+        </div>
+        <div class="col-sm">
+                {% if user.is_authenticated %}
+                    <p>Ola {{ user.username}}</p>
+                    <a href="{% url 'logout' %}">Sair</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-success">Entrar</a>
+                {% endif%}
+    </div>
+    </div>
+{% endblock %}
