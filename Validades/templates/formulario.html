@@ -4,10 +4,11 @@
 {% block title %} Pagina de Login {% endblock %}
 
 {% block main %}
-    <h3>Novo Registro</h3>
+    <h3 style="color:blue">Novo Registro</h3>
+    <hr >
     <form  method="POST">
       {% csrf_token %}
-      {{ form|bootstrap }}
+        <span class="font-weight-bold">{{ form|bootstrap }}</span>
     <button type="submit" class="btn btn-info">Salvar</button>
 </form>
 

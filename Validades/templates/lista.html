@@ -12,11 +12,12 @@
 
         </div>
         <div class="col-6">
-                <h3>Lista de Registro</h3>
-                 <ul class="list-group">
+                <h3 style="color:blue">Lista de Registro</h3>
+                <hr>
+                 <ul class="list-group" style="background-color:red">
                     {% for item in registro %}
-                        <li class="list-group-item">
-                            <a href="{% url 'atualizar'  item.id %}">{{ item.Produto}}</a>
+                        <li class="list-group-item" >
+                            <a class="font-weight-bold" href="{% url 'atualizar'  item.id %}">{{ item.Produto}}</a>
                             <a href="{% url 'apagar'  item.id %}"class="btn btn-outline-danger" >Excluir</a>
                         </li>
 

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static '/css/stick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/stick.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body >
-<div class="container" >
-    <div class="jumbotron">
+<body style="background-color:blue">
+<div class="container" style="background-color:red">
+    <div class="jumbotron " style="background-color:#CCEEFF">
     {% block main %}
     {% endblock %}
     </div>

@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title %} Seja Bem Vindo {% endblock %}
 
+{% block title %} Seja Bem Vindo {% endblock %}
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
 {% block main %}
     <div class="row">
         <div class="col">
 
         </div>
         <div class="col-6">
-            <img width="25%" src="https://www.redefemininapi.org.br/wp-content/uploads/2020/02/82035147_2504376926471124_3326539173904515072_n.png" alt="">
-           <h1>Seja Bem Vindo</h1>
+            <img  width="25%" src="https://www.redefemininapi.org.br/wp-content/uploads/2020/02/82035147_2504376926471124_3326539173904515072_n.png" alt="">
+            <h1 style="color: blue">Seja Bem Vindo</h1>
         </div>
         <div class="col-sm">
                 {% if user.is_authenticated %}
@@ -21,3 +27,8 @@
     </div>
     </div>
 {% endblock %}
+
+
+
+</body>
+</html>
