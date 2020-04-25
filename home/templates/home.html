@@ -20,7 +20,7 @@
         <div class="col-sm">
                 {% if user.is_authenticated %}
                     <p>Ola {{ user.username}}</p>
-                    <a href="{% url 'logout' %}">Sair</a>
+                    <a href="{% url 'melogout' %}">Sair</a>
                 {% else %}
                     <a href="{% url 'login' %}" class="btn btn-success">Entrar</a>
                 {% endif%}
