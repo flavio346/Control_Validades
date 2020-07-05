@@ -4,6 +4,8 @@
 
 {% extends 'base.html' %}
 
+{% load my_tags %}
+
 {% block title %} Controle de Validades {% endblock %}
 
 {% block main %}
@@ -14,14 +16,15 @@
         <div class="col-6">
                 <h3 style="color:blue">Lista de Registro</h3>
                 <hr>
-                 <ul class="list-group" style="background-color:red">
+                 <ul class="list-group" >
                     {% for item in registro %}
                         <li class="list-group-item" >
                             <a class="font-weight-bold" href="{% url 'atualizar'  item.id %}">{{ item.Produto}}</a>
                             <a href="{% url 'apagar'  item.id %}"class="btn btn-outline-danger" >Excluir</a>
                         </li>
 
-
+                    {% empty %}
+                            <li style="color:blue">Não Há Nenhum Registro</li>
                     {% endfor %}
                  </ul>
 
@@ -39,8 +42,9 @@
 
 
 
-
-
+<h4 class="badge badge-pill badge-primary">Horas</h4><br>
+    {% horas_real "%d-%m-%Y %I:%M %p" as horas %}
+    {{horas}}
 
 {% endblock %}
 
